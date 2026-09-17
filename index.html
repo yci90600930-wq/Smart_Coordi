@@ -6,148 +6,35 @@
   <meta name="theme-color" content="#16324f" />
   <title>Smart Coordi | 스마트제조 코디네이터 AI</title>
   <link rel="manifest" href="manifest.webmanifest" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles-v2.css" />
 </head>
 <body>
-  <header class="topbar">
-    <div>
-      <div class="eyebrow">SMART MANUFACTURING COORDINATOR</div>
-      <h1>스마트제조 코디네이터 AI</h1>
-      <p>업체별 DB · 현장방문 · 녹음/전사 · 문제-개선과제-KPI 연결</p>
-    </div>
-    <div class="status-pill" id="saveStatus">브라우저 DB 준비 중</div>
-  </header>
-
-  <nav class="tabs" id="tabs">
-    <button data-view="dashboard" class="active">대시보드</button>
-    <button data-view="companies">업체·프로젝트</button>
-    <button data-view="visits">현장방문·녹음</button>
-    <button data-view="analysis">문제·개선과제</button>
-    <button data-view="kpi">KPI·H/W·S/W</button>
-    <button data-view="backup">백업·복원</button>
-  </nav>
-
-  <main>
-    <section id="dashboard" class="view active">
-      <div class="grid metrics" id="metricCards"></div>
-      <div class="card">
-        <div class="card-head"><h2>프로젝트 현황</h2><span class="hint">업체 → 프로젝트 → 방문 → 분석정보가 연결됩니다.</span></div>
-        <div id="dashboardTable"></div>
-      </div>
-    </section>
-
-    <section id="companies" class="view">
-      <div class="split">
-        <div class="card">
-          <h2>업체 등록 / 수정</h2>
-          <form id="companyForm" class="form-grid">
-            <input type="hidden" name="id" />
-            <label>업체명<input name="company_name" required /></label>
-            <label>대표자<input name="ceo_name" /></label>
-            <label>사업자등록번호<input name="business_number" inputmode="numeric" maxlength="12" placeholder="숫자만 입력" /></label>
-            <label>전화번호<input name="phone" inputmode="numeric" maxlength="13" placeholder="숫자만 입력" /></label>
-            <label>업종<input name="industry_type" /></label>
-            <label>주요제품<input name="main_product" /></label>
-            <label class="span2">주소<input name="address" /></label>
-            <label>종업원 수<input name="employee_count" type="number" min="0" /></label>
-            <label>매출액<input name="sales" class="money" inputmode="numeric" /></label>
-            <div class="actions span2"><button class="primary" type="submit">저장</button><button type="button" data-reset="companyForm">신규 입력</button></div>
-          </form>
-        </div>
-        <div class="card">
-          <h2>프로젝트 등록 / 수정</h2>
-          <form id="projectForm" class="form-grid">
-            <input type="hidden" name="id" />
-            <label class="span2">업체<select name="company_id" id="projectCompany" required></select></label>
-            <label>사업연도<input name="project_year" type="number" value="2026" /></label>
-            <label>사업상태<select name="status"><option>진단</option><option>계획</option><option>구축</option><option>완료</option></select></label>
-            <label class="span2">지원사업명<input name="support_program_name" value="스마트제조 지원사업" /></label>
-            <label class="span2">과제명<input name="project_title" required /></label>
-            <label>담당 코디네이터<input name="coordinator" /></label>
-            <label>총사업비<input name="total_budget" class="money" inputmode="numeric" /></label>
-            <label>정부지원금<input name="government_fund" class="money" inputmode="numeric" /></label>
-            <label>자부담 현금<input name="self_cash" class="money" inputmode="numeric" /></label>
-            <label>자부담 현물<input name="self_in_kind" class="money" inputmode="numeric" /></label>
-            <div class="span2" id="budgetCheck"></div>
-            <div class="actions span2"><button class="primary" type="submit">저장</button><button type="button" data-reset="projectForm">신규 입력</button></div>
-          </form>
-        </div>
-      </div>
-      <div class="card"><h2>업체 목록</h2><div id="companyTable"></div></div>
-      <div class="card"><h2>프로젝트 목록</h2><div id="projectTable"></div></div>
-    </section>
-
-    <section id="visits" class="view">
-      <div class="card">
-        <div class="card-head"><h2>현장방문 등록 / 수정</h2><span class="hint">이 화면에서 녹음과 전사를 함께 진행합니다.</span></div>
-        <form id="visitForm" class="form-grid">
-          <input type="hidden" name="id" />
-          <label class="span2">프로젝트<select name="project_id" id="visitProject" required></select></label>
-          <label>방문차수<input name="visit_no" type="number" min="1" value="1" /></label>
-          <label>방문일자<input name="visit_date" type="date" /></label>
-          <label>방문유형<select name="visit_type"><option>현장진단</option><option>문제분석</option><option>KPI설계</option><option>구축확정</option><option>구축확인</option><option>완료확인</option></select></label>
-          <label>참석자<input name="attendees" /></label>
-          <label class="span2">방문목적<textarea name="purpose" rows="2"></textarea></label>
-          <label class="span2">주요 논의사항<textarea name="summary" rows="4"></textarea></label>
-          <label class="span2">현장 메모<textarea name="memo" rows="3"></textarea></label>
-          <div class="actions span2"><button class="primary" type="submit">방문내용 저장</button><button type="button" data-reset="visitForm">신규 입력</button></div>
-        </form>
-      </div>
-
-      <div class="card recorder-card">
-        <div class="card-head"><h2>현장 녹음 및 전사</h2><span id="recStatus" class="status-pill neutral">대기</span></div>
-        <p class="hint">녹음은 브라우저에서 진행됩니다. 실시간 보조 전사는 Chrome/Edge에서 지원될 수 있고, 최종 전사는 녹음 후 브라우저 로컬 Whisper를 사용할 수 있습니다.</p>
-        <div class="rec-controls">
-          <button id="startRec" class="record">● 녹음 시작</button>
-          <button id="stopRec" disabled>■ 녹음 종료</button>
-          <button id="localWhisper" disabled>로컬 Whisper 고정밀 전사</button>
-        </div>
-        <div class="rec-meter"><div id="meterFill"></div></div>
-        <div class="rec-meta"><span id="timer">00:00:00</span><span id="micInfo">마이크 대기</span></div>
-        <label>실시간/최종 전사<textarea id="transcriptBox" rows="10" placeholder="녹음 중 전사 내용이 여기에 누적됩니다."></textarea></label>
-        <div class="actions"><button id="applyTranscript" class="primary">전사문 → 방문내용 자동입력</button><button id="saveTranscript">전사문 DB 저장</button></div>
-        <div id="sttMessage" class="hint"></div>
-        <audio id="audioPreview" controls class="hidden"></audio>
-      </div>
-      <div class="card"><h2>방문 이력</h2><div id="visitTable"></div></div>
-      <div class="card"><h2>녹음·전사 이력</h2><div id="recordingTable"></div></div>
-    </section>
-
-    <section id="analysis" class="view">
-      <div class="card">
-        <h2>문제 · 원인 · 개선과제</h2>
-        <div class="triple">
-          <form id="issueForm" class="mini-form"><h3>문제점</h3><input type="hidden" name="id"/><select name="project_id" class="project-select"></select><select name="category"><option>생산성</option><option>품질</option><option>원가</option><option>납기</option><option>기타</option></select><textarea name="text" placeholder="확인된 문제"></textarea><select name="status"><option>확인됨</option><option>추정</option><option>추가확인 필요</option><option>상충정보</option></select><input name="evidence" placeholder="근거(녹취/사진/문서)"/><div class="actions"><button class="primary">저장</button><button type="button" data-reset="issueForm">신규</button></div></form>
-          <form id="causeForm" class="mini-form"><h3>원인/원인후보</h3><input type="hidden" name="id"/><select name="project_id" class="project-select"></select><textarea name="text" placeholder="확정 또는 후보 원인"></textarea><select name="status"><option>확인됨</option><option>추정</option><option>추가확인 필요</option></select><input name="evidence" placeholder="근거"/><div class="actions"><button class="primary">저장</button><button type="button" data-reset="causeForm">신규</button></div></form>
-          <form id="improvementForm" class="mini-form"><h3>개선과제</h3><input type="hidden" name="id"/><select name="project_id" class="project-select"></select><textarea name="text" placeholder="개선과제"></textarea><input name="expected_effect" placeholder="기대효과"/><div class="actions"><button class="primary">저장</button><button type="button" data-reset="improvementForm">신규</button></div></form>
-        </div>
-      </div>
-      <div class="card"><h2>문제점 목록</h2><div id="issueTable"></div></div>
-      <div class="card"><h2>원인 목록</h2><div id="causeTable"></div></div>
-      <div class="card"><h2>개선과제 목록</h2><div id="improvementTable"></div></div>
-    </section>
-
-    <section id="kpi" class="view">
-      <div class="triple">
-        <div class="card"><form id="kpiForm" class="mini-form"><h2>KPI</h2><input type="hidden" name="id"/><select name="project_id" class="project-select"></select><select name="category"><option>생산성 변수</option><option>품질관리 변수</option><option>원가 변수</option><option>납기 변수</option></select><input name="name" placeholder="KPI명"/><input name="baseline" placeholder="기준값"/><input name="target" placeholder="목표값"/><input name="unit" placeholder="단위"/><input name="formula" placeholder="산식"/><input name="data_source" placeholder="데이터 출처"/><div class="actions"><button class="primary">저장</button><button type="button" data-reset="kpiForm">신규</button></div></form></div>
-        <div class="card"><form id="hardwareForm" class="mini-form"><h2>H/W</h2><input type="hidden" name="id"/><select name="project_id" class="project-select"></select><input name="name" placeholder="설비명"/><input name="model" placeholder="모델/사양"/><input name="qty" type="number" value="1"/><input name="amount" class="money" placeholder="금액"/><input name="location" placeholder="설치위치"/><div class="actions"><button class="primary">저장</button><button type="button" data-reset="hardwareForm">신규</button></div></form></div>
-        <div class="card"><form id="softwareForm" class="mini-form"><h2>S/W</h2><input type="hidden" name="id"/><select name="project_id" class="project-select"></select><input name="name" placeholder="시스템명"/><textarea name="functions" placeholder="주요 기능"></textarea><input name="amount" class="money" placeholder="금액"/><div class="actions"><button class="primary">저장</button><button type="button" data-reset="softwareForm">신규</button></div></form></div>
-      </div>
-      <div class="card"><h2>KPI 목록</h2><div id="kpiTable"></div></div>
-      <div class="card"><h2>H/W 목록</h2><div id="hardwareTable"></div></div>
-      <div class="card"><h2>S/W 목록</h2><div id="softwareTable"></div></div>
-    </section>
-
-    <section id="backup" class="view">
-      <div class="split">
-        <div class="card"><h2>전체 데이터 백업</h2><p>업체·프로젝트·방문·전사·분석·KPI 정보를 JSON으로 저장합니다. 녹음 원본은 용량 때문에 별도로 다운로드합니다.</p><button id="exportJson" class="primary">JSON 백업 다운로드</button></div>
-        <div class="card"><h2>데이터 복원</h2><p>이 프로그램에서 내보낸 JSON 파일을 선택합니다. 기존 DB와 병합하지 않고 백업 기준으로 복원합니다.</p><input type="file" id="importFile" accept="application/json"/><button id="importJson">선택한 백업 복원</button></div>
-      </div>
-      <div class="card warning"><h2>저장 위치 안내</h2><p>현재 무료 GitHub Pages 버전의 업무 데이터는 GitHub 저장소에 올라가지 않고 <strong>현재 사용 중인 브라우저의 IndexedDB</strong>에 저장됩니다. 정기적으로 JSON 백업을 보관해 주세요.</p></div>
-    </section>
-  </main>
-
-  <footer>Smart_Coordi · GitHub Pages 브라우저 DB 버전</footer>
-  <script type="module" src="app.js"></script>
-</body>
-</html>
+<header class="topbar"><div><div class="eyebrow">SMART MANUFACTURING COORDINATOR</div><h1>스마트제조 코디네이터 AI</h1><p>업체별 DB · 견적서 자동정리 · 현장 녹음/전사 · 문제-개선과제-KPI 자동 연결</p></div><div class="status-pill" id="saveStatus">브라우저 DB 준비 중</div></header>
+<nav class="tabs" id="tabs">
+  <button data-view="dashboard" class="active">대시보드</button><button data-view="companies">업체·프로젝트·사업비</button><button data-view="visits">현장방문·녹음</button><button data-view="analysis">문제·개선과제</button><button data-view="kpi">KPI·H/W·S/W</button><button data-view="backup">백업·복원</button>
+</nav>
+<main>
+<section id="dashboard" class="view active"><div class="grid metrics" id="metricCards"></div><div class="card"><div class="card-head"><h2>프로젝트 현황</h2><span class="hint">업체 → 프로젝트 → 견적 → 방문 → 녹취 → 분석정보가 연결됩니다.</span></div><div id="dashboardTable"></div></div></section>
+<section id="companies" class="view">
+<div class="split">
+  <div class="card"><h2>업체 등록 / 수정</h2><form id="companyForm" class="form-grid"><input type="hidden" name="id"/><label>업체명<input name="company_name" required/></label><label>대표자<input name="ceo_name"/></label><label>사업자등록번호<input name="business_number" inputmode="numeric" placeholder="숫자만 입력"/></label><label>전화번호<input name="phone" inputmode="numeric" placeholder="숫자만 입력"/></label><label>업종<input name="industry_type"/></label><label>주요제품<input name="main_product"/></label><label class="span2">주소<input name="address"/></label><label>종업원 수<input name="employee_count" type="number" min="0"/></label><label>매출액<input name="sales" class="money" inputmode="numeric"/></label><div class="actions span2"><button class="primary">저장</button><button type="button" data-reset="companyForm">신규 입력</button></div></form></div>
+  <div class="card"><h2>프로젝트 등록 / 수정</h2><form id="projectForm" class="form-grid"><input type="hidden" name="id"/><label class="span2">업체<select name="company_id" id="projectCompany" required></select></label><label>사업연도<input name="project_year" type="number" value="2026"/></label><label>사업상태<select name="status"><option>진단</option><option>계획</option><option>구축</option><option>완료</option></select></label><label class="span2">지원사업명<input name="support_program_name" value="스마트제조 지원사업"/></label><label class="span2">과제명<input name="project_title" required/></label><label>담당 코디네이터<input name="coordinator"/></label><label>총사업비<input name="total_budget" class="money" inputmode="numeric"/></label><label>정부지원금<input name="government_fund" class="money" inputmode="numeric"/></label><label>자부담 현금<input name="self_cash" class="money" inputmode="numeric"/></label><label>자부담 현물<input name="self_in_kind" class="money" inputmode="numeric"/></label><div class="span2" id="budgetCheck"></div><div class="actions span2"><button class="primary">프로젝트 저장</button><button type="button" data-reset="projectForm">신규 입력</button></div></form></div>
+</div>
+<div class="card quote-card"><div class="card-head"><div><h2>견적서 자동 인식 · 사업비 정리</h2><p class="hint">수기 입력과 견적서 첨부를 함께 사용할 수 있습니다. PDF·이미지·Excel·CSV·TXT를 브라우저에서 분석합니다.</p></div><span id="quoteStatus" class="status-pill neutral">대기</span></div>
+  <div class="quote-toolbar"><input type="file" id="quoteFile" accept=".pdf,.png,.jpg,.jpeg,.webp,.bmp,.xlsx,.xls,.csv,.txt"/><button id="parseQuote" class="primary">견적서 인식</button><button id="addQuoteRow">수기 항목 추가</button><select id="fundingRule"><option value="60-20-20">총액 기준 60% / 20% / 20% 자동계산</option><option value="total-only">총사업비만 적용</option></select><button id="applyQuoteBudget">사업비에 적용</button><button id="saveQuote">견적서 DB 저장 + H/W·S/W 반영</button></div>
+  <div id="quoteProgress" class="hint"></div><div id="quoteEditor"></div><div id="quoteTotals"></div>
+</div>
+<div class="card"><h2>견적서 목록</h2><div id="quotationTable"></div></div><div class="card"><h2>업체 목록</h2><div id="companyTable"></div></div><div class="card"><h2>프로젝트 목록</h2><div id="projectTable"></div></div>
+</section>
+<section id="visits" class="view">
+<div class="card"><div class="card-head"><h2>현장방문 등록 / 수정</h2><span class="hint">녹취 분석 결과가 아래 입력란과 다른 탭에 자동 반영됩니다.</span></div><form id="visitForm" class="form-grid"><input type="hidden" name="id"/><label class="span2">프로젝트<select name="project_id" id="visitProject" required></select></label><label>방문차수<input name="visit_no" type="number" min="1" value="1"/></label><label>방문일자<input name="visit_date" type="date"/></label><label>방문유형<select name="visit_type"><option>현장진단</option><option>문제분석</option><option>KPI설계</option><option>구축확정</option><option>구축확인</option><option>완료확인</option></select></label><label>참석자<input name="attendees"/></label><label class="span2">방문목적<textarea name="purpose" rows="2"></textarea></label><label class="span2">주요 논의사항<textarea name="summary" rows="5"></textarea></label><label class="span2">현장 메모<textarea name="memo" rows="3"></textarea></label><div class="actions span2"><button class="primary">방문내용 저장</button><button type="button" data-reset="visitForm">신규 입력</button></div></form></div>
+<div class="card recorder-card"><div class="card-head"><h2>현장 녹음 및 전사</h2><span id="recStatus" class="status-pill neutral">대기</span></div><p class="hint">실시간 보조 전사와 녹음 종료 후 브라우저 로컬 Whisper 고정밀 전사를 지원합니다. 외부 API Key는 사용하지 않습니다.</p><div class="rec-controls"><button id="startRec" class="record">● 녹음 시작</button><button id="stopRec" disabled>■ 녹음 종료</button><button id="localWhisper" disabled>로컬 Whisper 고정밀 전사</button></div><div class="rec-meter"><div id="meterFill"></div></div><div class="rec-meta"><span id="timer">00:00:00</span><span id="micInfo">마이크 대기</span></div><label>실시간/최종 전사<textarea id="transcriptBox" rows="12" placeholder="전사 내용이 여기에 누적됩니다. 직접 수정할 수도 있습니다."></textarea></label><div class="actions"><button id="saveTranscript">전사문 DB 저장/수정</button><button id="analyzeAll" class="primary">전사 분석 → 전체 탭 자동입력</button></div><div id="analysisPreview" class="analysis-preview hidden"></div><div id="sttMessage" class="hint"></div><audio id="audioPreview" controls class="hidden"></audio></div>
+<div class="card"><h2>방문 이력</h2><div id="visitTable"></div></div><div class="card"><h2>녹음·전사 이력</h2><div id="recordingTable"></div></div>
+</section>
+<section id="analysis" class="view"><div class="card"><h2>문제 · 원인 · 개선과제</h2><p class="hint">녹취 자동분석 항목도 일반 입력과 동일하게 수정·삭제할 수 있습니다.</p><div class="triple"><form id="issueForm" class="mini-form"><h3>문제점</h3><input type="hidden" name="id"/><select name="project_id" class="project-select"></select><select name="category"><option>생산성</option><option>품질</option><option>원가</option><option>납기</option><option>기타</option></select><textarea name="text" placeholder="확인된 문제"></textarea><select name="status"><option>확인됨</option><option>추정</option><option>추가확인 필요</option><option>상충정보</option></select><input name="evidence" placeholder="근거(녹취/사진/문서)"/><div class="actions"><button class="primary">저장</button><button type="button" data-reset="issueForm">신규</button></div></form><form id="causeForm" class="mini-form"><h3>원인/원인후보</h3><input type="hidden" name="id"/><select name="project_id" class="project-select"></select><textarea name="text" placeholder="확정 또는 후보 원인"></textarea><select name="status"><option>확인됨</option><option>추정</option><option>추가확인 필요</option></select><input name="evidence" placeholder="근거"/><div class="actions"><button class="primary">저장</button><button type="button" data-reset="causeForm">신규</button></div></form><form id="improvementForm" class="mini-form"><h3>개선과제</h3><input type="hidden" name="id"/><select name="project_id" class="project-select"></select><textarea name="text" placeholder="개선과제"></textarea><input name="expected_effect" placeholder="기대효과"/><div class="actions"><button class="primary">저장</button><button type="button" data-reset="improvementForm">신규</button></div></form></div></div><div class="card"><h2>문제점 목록</h2><div id="issueTable"></div></div><div class="card"><h2>원인 목록</h2><div id="causeTable"></div></div><div class="card"><h2>개선과제 목록</h2><div id="improvementTable"></div></div></section>
+<section id="kpi" class="view"><div class="triple"><div class="card"><form id="kpiForm" class="mini-form"><h2>KPI</h2><input type="hidden" name="id"/><select name="project_id" class="project-select"></select><select name="category"><option>생산성 변수</option><option>품질관리 변수</option><option>원가 변수</option><option>납기 변수</option></select><input name="name" placeholder="KPI명"/><input name="baseline" placeholder="기준값"/><input name="target" placeholder="목표값"/><input name="unit" placeholder="단위"/><input name="formula" placeholder="산식"/><input name="data_source" placeholder="데이터 출처"/><div class="actions"><button class="primary">저장</button><button type="button" data-reset="kpiForm">신규</button></div></form></div><div class="card"><form id="hardwareForm" class="mini-form"><h2>H/W</h2><input type="hidden" name="id"/><select name="project_id" class="project-select"></select><input name="name" placeholder="설비명"/><input name="model" placeholder="모델/사양"/><input name="qty" type="number" value="1"/><input name="amount" class="money" placeholder="금액"/><input name="location" placeholder="설치위치"/><div class="actions"><button class="primary">저장</button><button type="button" data-reset="hardwareForm">신규</button></div></form></div><div class="card"><form id="softwareForm" class="mini-form"><h2>S/W</h2><input type="hidden" name="id"/><select name="project_id" class="project-select"></select><input name="name" placeholder="시스템명"/><textarea name="functions" placeholder="주요 기능"></textarea><input name="amount" class="money" placeholder="금액"/><div class="actions"><button class="primary">저장</button><button type="button" data-reset="softwareForm">신규</button></div></form></div></div><div class="card"><h2>KPI 목록</h2><div id="kpiTable"></div></div><div class="card"><h2>H/W 목록</h2><div id="hardwareTable"></div></div><div class="card"><h2>S/W 목록</h2><div id="softwareTable"></div></div></section>
+<section id="backup" class="view"><div class="split"><div class="card"><h2>전체 데이터 백업</h2><p>업체·프로젝트·견적·방문·전사·분석·KPI 정보를 JSON으로 저장합니다. 녹음 원본은 용량 때문에 별도입니다.</p><button id="exportJson" class="primary">JSON 백업 다운로드</button></div><div class="card"><h2>데이터 복원</h2><p>이 프로그램에서 내보낸 JSON 파일을 선택합니다.</p><input type="file" id="importFile" accept="application/json"/><button id="importJson">선택한 백업 복원</button></div></div><div class="card warning"><h2>저장 위치 안내</h2><p>업무 데이터는 GitHub 저장소가 아니라 <strong>현재 브라우저의 IndexedDB</strong>에 저장됩니다. 정기적으로 JSON 백업을 보관해 주세요.</p></div></section>
+</main>
+<footer>Smart_Coordi · GitHub Pages 브라우저 DB 버전</footer>
+<script type="module" src="app-v2.js"></script>
+</body></html>
