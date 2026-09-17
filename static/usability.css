@@ -1,0 +1,36 @@
+.brand{padding:0 4px;gap:10px}
+.brand img{flex-shrink:0;width:30px;height:30px}
+.brand strong{word-break:keep-all;font-size:16px}
+.brand small{font-size:10px;letter-spacing:1px}
+.mapping-pager{position:sticky;top:0;background:#f3f6fa;border-bottom:1px solid var(--line);padding:12px;display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:13px}
+.transcription-card{border-left:4px solid var(--teal)}
+.transcription-controls{display:grid;grid-template-columns:minmax(180px,280px) 1fr;align-items:end;gap:18px}
+.transcription-controls .actions{justify-content:flex-end}
+.transcription-badges{display:flex;align-items:center;justify-content:flex-end;gap:8px;flex-wrap:wrap}
+.transcription-card label>span,.transcription-controls label{font-size:14px;font-weight:600}
+.transcription-card textarea{margin-top:8px;min-height:150px;line-height:1.75}
+.badge.live{background:#fee5e8;color:#a32b3b;position:relative;padding-left:22px}
+.badge.live:before{content:'';position:absolute;left:9px;top:50%;width:7px;height:7px;border-radius:50%;background:#d9263e;transform:translateY(-50%);animation:recording-pulse 1.2s infinite}
+.transcript-latest{margin-top:18px;border-top:1px solid var(--line);padding-top:14px}
+.transcript-latest pre{max-height:210px;margin-bottom:10px}
+.transcript-input-grid{align-items:start}
+.transcript-editor{display:grid;gap:14px;margin:16px 0}
+.transcript-editor label{font-size:14px;font-weight:600}
+.transcript-editor textarea{margin-top:6px;line-height:1.6}
+.transcript-meta{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.transcript-meta .sub{margin:0}
+.transcription-help{margin-top:14px}
+.transcription-help kbd{display:inline-block;min-width:28px;padding:2px 7px;border:1px solid #b8c1cc;border-bottom-width:2px;border-radius:5px;background:#fff;color:#243142;font:600 12px/1.5 system-ui;text-align:center}
+@keyframes recording-pulse{50%{opacity:.35}}
+@media(max-width:760px){
+  .side-bottom{display:block;padding:10px 0 0}
+  .side-bottom strong{display:none}
+  .side-bottom .section-space{margin-top:10px}
+  .mapping-pager{flex-wrap:wrap}
+  .transcription-controls{grid-template-columns:1fr}
+  .transcription-controls .actions{justify-content:flex-start}
+  .transcription-card .card-head{align-items:flex-start;gap:12px}
+  .transcription-badges{justify-content:flex-start}
+  .transcript-meta{align-items:flex-start;flex-direction:column}
+  .transcript-meta .actions{justify-content:flex-start}
+}

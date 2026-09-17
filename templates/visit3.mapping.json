@@ -1,0 +1,289 @@
+[
+  {
+    "part": "Contents/section0.xml",
+    "index": 6,
+    "expected": "",
+    "field": "company.name",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 10,
+    "expected": "",
+    "field": "company.representative",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 12,
+    "expected": "",
+    "field": "company.business_no",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 14,
+    "expected": " 010 -",
+    "field": "company.phone",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 16,
+    "expected": "",
+    "field": "company.coordinator",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 18,
+    "expected": " 010 -",
+    "field": "pending.general",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 20,
+    "expected": " (<hp:tab width=\"2784\" leader=\"0\" type=\"1\"/><hp:tab width=\"4000\" leader=\"0\" type=\"1\"/>)차",
+    "field": "visit.round",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 22,
+    "expected": "       .     .     . (<hp:tab width=\"856\" leader=\"0\" type=\"1\"/>  요일)",
+    "field": "visit.date",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 24,
+    "expected": "□ 오전  □ 오후  □ 주말 / 00시 00분 ~ 00시 00분",
+    "field": "visit.time",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 26,
+    "expected": "00시간",
+    "field": "visit.duration",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 28,
+    "expected": "  □",
+    "field": "pending.general",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 32,
+    "expected": " ",
+    "field": "sections.summary",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 35,
+    "expected": "       년      월      일",
+    "field": "pending.general",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 37,
+    "expected": "",
+    "field": "sections.next",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 42,
+    "expected": "          ",
+    "field": "company.representative",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 44,
+    "expected": "         ",
+    "field": "company.coordinator",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 48,
+    "expected": "20     년     월     일",
+    "field": "visit.date",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 52,
+    "expected": "                                신청인(대표) :                  (인/서명)",
+    "field": "signature.representative",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 54,
+    "expected": "                             <hp:fwSpace/>    코디네이터 :                  (인/서명)",
+    "field": "signature.coordinator",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 58,
+    "expected": "",
+    "field": "company.name",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 60,
+    "expected": "2026.     .     .",
+    "field": "visit.date",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 62,
+    "expected": "",
+    "field": "company.business_no",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 64,
+    "expected": "        차",
+    "field": "visit.round",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 66,
+    "expected": "              (서명)",
+    "field": "signature.representative",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 68,
+    "expected": "             (서명)",
+    "field": "signature.coordinator",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 70,
+    "expected": "1차·2차 현장진단표의 종합 의견 요약",
+    "field": "sections.previous",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 71,
+    "expected": "이전 코디네이팅 기록 요약",
+    "field": "empty",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 74,
+    "expected": "- 2차 방문에서 결정한 내용이 3차 방문까지 변경 없이 유지되었는지 재확인 후 기재",
+    "field": "sections.type",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 77,
+    "expected": "2차 ③번, ④번의 내용에 더해 아래 흐름이 드러나도록 작성",
+    "field": "sections.improvement",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 78,
+    "expected": "- 1차 방문 시 진단된 문제점은 무엇이었는지",
+    "field": "empty",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 79,
+    "expected": "2차 방문에서 설정한 개선목표는 무엇이었는지",
+    "field": "empty",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 80,
+    "expected": "그 목표가 실제로 어떻게 실행되었는지, 계획과 달라진 부분이 있다면 원인을 포함하여 기재 ",
+    "field": "empty",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 81,
+    "expected": "1차 방문 시 확인한 KPI 수치와, H/W 혹은 S/W를 활용하여 달성 가능한 KPI 수치 기재",
+    "field": "empty",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 82,
+    "expected": "※ 설비 특성상 예측이 어려운 지표는 언제·어떤 방식으로 측정할지 아래 ‘향후 사후관리계획’과 연결하여 기재",
+    "field": "empty",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 85,
+    "expected": "- 최종 견적서 기준으로 장비·SW명을 정확히 기재",
+    "field": "sections.assets",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 88,
+    "expected": "- 최종 확정된 국비·자기부담(현금/현물) 금액을 원 단위까지 정확히 기재",
+    "field": "sections.budget",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 91,
+    "expected": "제출여부 (O/X)",
+    "field": "sections.submission",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 92,
+    "expected": "제출일 (연/월/일)",
+    "field": "empty",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 94,
+    "expected": "- 협약 이후 코디네이터가 어떤 주기로 사후관리를 진행할지 계획을 간단히 기재(예: 분기 1회 점검)",
+    "field": "sections.aftercare",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 96,
+    "expected": "사진 1",
+    "field": "sections.photos",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 97,
+    "expected": "사진 2",
+    "field": "empty",
+    "max_chars": 12000
+  }
+]

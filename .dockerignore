@@ -1,0 +1,15 @@
+.git
+.github
+__pycache__
+*.pyc
+*.pyo
+data
+outputs
+reference
+tests
+docs
+*.log
+server.pid
+*.cmd
+*.zip
+.env

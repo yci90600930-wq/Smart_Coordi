@@ -1,0 +1,212 @@
+[
+  {
+    "part": "Contents/section0.xml",
+    "index": 6,
+    "expected": "     일",
+    "field": "pending.general",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 8,
+    "expected": "",
+    "field": "company.name",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 10,
+    "expected": "",
+    "field": "company.representative",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 12,
+    "expected": "",
+    "field": "company.business_no",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 14,
+    "expected": " 010 - ",
+    "field": "company.phone",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 16,
+    "expected": "소  속 : ",
+    "field": "contact.organization",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 17,
+    "expected": "성  명 : ",
+    "field": "contact.coordinator",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 18,
+    "expected": "연락처 : ",
+    "field": "pending.general",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 19,
+    "expected": "이메일 : ",
+    "field": "contact.email",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 51,
+    "expected": "20   년   월   일",
+    "field": "implementation.report_date",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 53,
+    "expected": "                                신청인(대표) :                  (인/서명)",
+    "field": "signature.representative",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 55,
+    "expected": "                             <hp:fwSpace/>    코디네이터 :                  (인/서명)",
+    "field": "signature.coordinator",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 26,
+    "expected": "예시) 기업의 주요 취급 제품·서비스, 생산 규모, 조직 현황 등 기재",
+    "field": "sections.company",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 27,
+    "expected": "○ (업종/제품) 자동차부품용 정밀 금속부품(CNC 가공) 생산",
+    "field": "empty",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 28,
+    "expected": "○ (생산규모) 월 평균 000개 생산",
+    "field": "empty",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 29,
+    "expected": "○ (조직현황) 대표자, 직원 0명 포함 0명",
+    "field": "empty",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 31,
+    "expected": "예시) 본 사업을 통해 ‘무엇을 도입하는지’기재(설비·시스템 도입 목적 및 범위)",
+    "field": "sections.purpose",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 32,
+    "expected": "○ CNC 가동시간 IoT 센서 자동기록 시스템 도입",
+    "field": "empty",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 33,
+    "expected": "○ 생산관리 SaaS(가동률·공구수명 예측 대시보드) 도입",
+    "field": "empty",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 35,
+    "expected": "예시) ",
+    "field": "sections.kpi",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 36,
+    "expected": "○ 기존 성과지표 – 기존 사업계획서 상 KPI 0.00",
+    "field": "empty",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 37,
+    "expected": "○ 기존 지표 분석 – 내방·상담 결과 OO한 사유로 과대 설정으로 파악 <hp:tab width=\"1548\" leader=\"0\" type=\"1\"/><hp:tab width=\"4000\" leader=\"0\" type=\"1\"/>     (사유 상세 기재)",
+    "field": "empty",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 38,
+    "expected": "○ 신규 지표 설정 – KPI 0.00으로 조정",
+    "field": "empty",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 39,
+    "expected": "○ 신규 지표 분석 – OO한 사유로 조정 KPI는 달성가능할 것으로 판단",
+    "field": "empty",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 40,
+    "expected": "○ 기대효과 – 매년 OO 등의 성과를 달성할 것으로 기대",
+    "field": "empty",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 42,
+    "expected": "예시) 도입된 H/W·S/W의 현재 활용 현황과 수준 기재 ",
+    "field": "sections.assets",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 43,
+    "expected": "○ MES 시스템 구축 및 현황관리",
+    "field": "empty",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 45,
+    "expected": "예시) 코디네이팅 기간 중 수집한 데이터를 기반으로 작성",
+    "field": "sections.data",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 46,
+    "expected": "○ 불량률 체크 및 생산률",
+    "field": "empty",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 48,
+    "expected": "예시) 코디네이팅 기간 중 수집한 데이터를 기반으로 코디네이터의 종합 의견 작성",
+    "field": "sections.opinion",
+    "max_chars": 12000
+  }
+]

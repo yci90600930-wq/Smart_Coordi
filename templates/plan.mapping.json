@@ -1,0 +1,422 @@
+[
+  {
+    "part": "Contents/section0.xml",
+    "index": 8,
+    "expected": "□ 개별형     □ 클러스터형",
+    "field": "company.application_type",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 10,
+    "expected": "□ 공정기술형    □ 생활문화형   □ 현안문제해결형",
+    "field": "company.application_field",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 12,
+    "expected": "",
+    "field": "company.name",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 14,
+    "expected": "",
+    "field": "company.business_no",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 16,
+    "expected": "",
+    "field": "company.representative",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 18,
+    "expected": "",
+    "field": "company.phone",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 20,
+    "expected": "",
+    "field": "pending.general",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 22,
+    "expected": "",
+    "field": "pending.general",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 24,
+    "expected": "",
+    "field": "company.address",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 36,
+    "expected": "36,000,000",
+    "field": "budget.government",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 38,
+    "expected": "12,000,000",
+    "field": "budget.cash",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 40,
+    "expected": "12,000,000",
+    "field": "budget.inkind",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 41,
+    "expected": "24,000,000",
+    "field": "budget.self_total",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 42,
+    "expected": "60,000,000",
+    "field": "budget.total",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 61,
+    "expected": "구매",
+    "field": "hw.method",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 62,
+    "expected": "CNC선반",
+    "field": "hw.name",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 63,
+    "expected": "AB-38WTD 버전3",
+    "field": "hw.model",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 64,
+    "expected": "1",
+    "field": "hw.quantity",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 65,
+    "expected": "",
+    "field": "pending.quote",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 66,
+    "expected": "",
+    "field": "pending.quote",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 67,
+    "expected": "",
+    "field": "hw.amount",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 70,
+    "expected": "공급기업명:                         사업자등록번호: ",
+    "field": "hw.supplier",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 72,
+    "expected": "□ Saas형",
+    "field": "sw.method",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 73,
+    "expected": "□ 상용SW",
+    "field": "empty",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 74,
+    "expected": " □ 미도입 ",
+    "field": "empty",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 75,
+    "expected": "CAD/CAM",
+    "field": "sw.name",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 76,
+    "expected": "00브랜드 CAD/CAM",
+    "field": "sw.model",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 77,
+    "expected": "1",
+    "field": "sw.quantity",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 78,
+    "expected": "",
+    "field": "pending.quote",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 79,
+    "expected": "",
+    "field": "pending.quote",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 80,
+    "expected": "",
+    "field": "sw.amount",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 83,
+    "expected": "공급기업명:                         사업자등록번호: ",
+    "field": "sw.supplier",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 92,
+    "expected": "- OOO장비 5월 말 발주, 6월 장비 제작, 7월 2주차 배송 등",
+    "field": "hw.schedule",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 93,
+    "expected": "- OOO장비 8월 장비 입고 및 시연 가능 등",
+    "field": "empty",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 99,
+    "expected": "",
+    "field": "sw.schedule",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 110,
+    "expected": "",
+    "field": "sections.company",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 113,
+    "expected": "",
+    "field": "sections.preparation",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 115,
+    "expected": "",
+    "field": "sections.asis",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 118,
+    "expected": "",
+    "field": "sections.process",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 120,
+    "expected": "",
+    "field": "company.products",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 122,
+    "expected": "",
+    "field": "pending.general",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 125,
+    "expected": "본 사업의 대상이 되는 생산 제품에 대한 설명",
+    "field": "sections.products",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 126,
+    "expected": "본 사업의 대상이 되는 생산 제품에 대한 설명",
+    "field": "pending.general",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 129,
+    "expected": "",
+    "field": "pending.general",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 130,
+    "expected": "",
+    "field": "pending.general",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 135,
+    "expected": "",
+    "field": "sections.hw",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 137,
+    "expected": "",
+    "field": "sections.hw",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 139,
+    "expected": " ",
+    "field": "hw.schedule",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 141,
+    "expected": "협약 종료 후 5년간 의무사용 계획 및 공급업체 A/S 계획 등 기재",
+    "field": "sections.aftercare",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 144,
+    "expected": "",
+    "field": "sections.kpi",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 152,
+    "expected": "",
+    "field": "sections.sw",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 155,
+    "expected": "",
+    "field": "sections.aftercare",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 157,
+    "expected": "협약 종료 후 5년간 의무사용 계획 및 공급업체 A/S 계획 등 기재",
+    "field": "sections.aftercare",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 160,
+    "expected": "",
+    "field": "sections.kpi",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 163,
+    "expected": "원",
+    "field": "pending.quote",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 166,
+    "expected": "원",
+    "field": "pending.quote",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 168,
+    "expected": "홈페이지 화면 캡처 사진 등록",
+    "field": "pending.general",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 170,
+    "expected": "홈페이지 화면 캡처 사진 등록",
+    "field": "pending.general",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 171,
+    "expected": "홈페이지 주소",
+    "field": "sw.url",
+    "max_chars": 12000
+  },
+  {
+    "part": "Contents/section0.xml",
+    "index": 172,
+    "expected": "홈페이지 주소",
+    "field": "pending.general",
+    "max_chars": 12000
+  }
+]
