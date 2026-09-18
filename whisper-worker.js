@@ -1,16 +1,17 @@
 let transcriber=null;
-let loading=false;
+let loadPromise=null;
 async function loadModel(){
   if(transcriber) return transcriber;
-  if(loading){while(!transcriber) await new Promise(r=>setTimeout(r,250)); return transcriber;}
-  loading=true;
-  postMessage({type:'status',message:'로컬 Whisper 모델을 불러오는 중입니다. 최초 1회는 모델 다운로드로 시간이 걸립니다.'});
-  const mod=await import('https://cdn.jsdelivr.net/npm/@xenova/transformers@2.17.2/+esm');
-  mod.env.allowLocalModels=false; mod.env.useBrowserCache=true;
-  transcriber=await mod.pipeline('automatic-speech-recognition','Xenova/whisper-small',{quantized:true,progress_callback:x=>{if(x?.progress!=null)postMessage({type:'progress',progress:x.progress});}});
-  loading=false;
-  postMessage({type:'status',message:'로컬 Whisper 준비 완료'});
-  return transcriber;
+  if(loadPromise) return loadPromise;
+  loadPromise=(async()=>{
+    postMessage({type:'status',message:'로컬 Whisper 모델을 불러오는 중입니다. 최초 1회는 모델 다운로드로 시간이 걸립니다.'});
+    const mod=await import('https://cdn.jsdelivr.net/npm/@xenova/transformers@2.17.2/+esm');
+    mod.env.allowLocalModels=false; mod.env.useBrowserCache=true;
+    transcriber=await mod.pipeline('automatic-speech-recognition','Xenova/whisper-base',{quantized:true,progress_callback:x=>{if(x?.progress!=null)postMessage({type:'progress',progress:x.progress});}});
+    postMessage({type:'status',message:'로컬 Whisper 준비 완료'});
+    return transcriber;
+  })();
+  try{return await loadPromise;}finally{loadPromise=null;}
 }
 onmessage=async(e)=>{
   if(e.data?.type==='warmup'){try{await loadModel();postMessage({type:'ready'});}catch(err){postMessage({type:'error',message:String(err?.message||err)});}return;}
